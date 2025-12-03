@@ -10,14 +10,14 @@ bot = commands.Bot(command_prefix='.', intents=intents)
 async def on_ready():
     print(f'Fizemos login como {bot.user}')
 
+@bot.event
+async def on_message_edit(before, after):
+    msg = '**' + str(before.author) + '** editou a mensagem:\n' + before.content + ' -> ' + after.content
+    await before.channel.send(msg)
+
 @bot.command()
 async def oi(ctx):
     await ctx.send(f'Oi! Eu sou o {bot.user}!')
-
-@bot.command()
-async def on_message_edit(self, before, after):
-    msg = f'**{before.author}** edited their message:\n{before.content} -> {after.content}'
-    await before.channel.send(msg)
 
 @bot.command()
 async def senha(ctx):
