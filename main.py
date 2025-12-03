@@ -22,4 +22,4 @@ async def senha(ctx):
 async def tchau(ctx):
     await ctx.send(f"\U0001f642")
 
-bot.run("<Token>")
+bot.run("<Seu token aqui>")
