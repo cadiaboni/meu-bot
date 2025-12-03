@@ -15,6 +15,11 @@ async def oi(ctx):
     await ctx.send(f'Oi! Eu sou o {bot.user}!')
 
 @bot.command()
+async def on_message_edit(self, before, after):
+    msg = f'**{before.author}** edited their message:\n{before.content} -> {after.content}'
+    await before.channel.send(msg)
+
+@bot.command()
 async def senha(ctx):
     await ctx.send(f"Sua senha é:" + " " + gen_pass(10))
 
