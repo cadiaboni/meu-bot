@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from  bot_logic import gen_pass
-import unicodedata
 
 intents = discord.Intents.default()
 intents.message_content = True
